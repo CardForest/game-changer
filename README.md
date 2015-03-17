@@ -15,7 +15,6 @@ $ npm install --save game-changer
 ```js
 var gameChanger = require('game-changer');
 
-gameChanger('Rainbow');
 ```
 
 ```sh

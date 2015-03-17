@@ -11,7 +11,9 @@
   "repository": "CardForest/game-changer",
   "license": "AGPL-3.0",
   "files": [
-    "index.js"
+    "lib/sane-socket/client.js",
+    "lib/sane-socket/server.js",
+    "lib/promise.js"
   ],
   "keywords": [
     "game-changer",
@@ -20,9 +22,15 @@
     "network",
     "state"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "es6-promise": "^2.0.1",
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5"
+  },
   "devDependencies": {
     "browserify": "^9.0.3",
+    "chai": "^2.1.2",
+    "chai-as-promised": "^4.3.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-nodeunit": "^0.4.1",
