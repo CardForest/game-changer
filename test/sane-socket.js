@@ -10,8 +10,8 @@ describe('game-changer sane socket', function () {
 
   before(function() {
     return server.start().then(function(){
-      server.addMessageHandler('ping', function(data, cb) {
-        this.emit('pong');
+      server.on('ping', function(data, cb) {
+        this.emit('pong', 'pong');
         cb({payload: 'pong'});
       });
       return client.start();
@@ -29,7 +29,10 @@ describe('game-changer sane socket', function () {
   });
 
   it('can do ping-pong with listener', function (done) {
-    client.on('pong', function () {done();});
+    client.on('pong', function (msg) {
+      assert.strictEqual(msg, 'pong');
+      done();
+    });
     client.send('ping');
   });
 });
